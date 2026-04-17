@@ -4,12 +4,12 @@ import NavButton from "./NavButton";
 function Nav() {
   return (
     <>
-      <div className="bg-white h-full p-4 pt-8 pr-10 flex flex-col gap-8">
-        <NavButton>
+      <div className="bg-white h-full pt-8 pr-8 flex flex-col gap-6">
+        <NavButton router={"/"}>
           <LayoutDashboard size={26} strokeWidth={2.5} />
           Dashboard
         </NavButton>
-        <NavButton>
+        <NavButton router={"/task"}>
           <Wallet size={26} strokeWidth={2.5} />
           Finanças
         </NavButton>
