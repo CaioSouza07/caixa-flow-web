@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import { useState } from "react";
 import Button from "./components/Button";
 import CardMonth from "./components/CardMonth";
+import RecentTransactionCard from "./components/RecentTransactionsCard";
 
 function App() {
   const [balance, setBalance] = useState(0);
@@ -22,6 +23,7 @@ function App() {
               <CardMonth variant={"income"} value={1820.5} />
               <CardMonth variant={"expense"} value={1130.2} />
             </div>
+            <RecentTransactionCard />
           </Container>
         </div>
       </div>
