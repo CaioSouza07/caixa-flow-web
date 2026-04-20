@@ -11,7 +11,6 @@ import useTransaction from "./hooks/useTransaction";
 
 function App() {
   const { transactions, balance, addTransaction } = useTransaction();
-  const [progress, setProsgress] = useState(12);
   return (
     <>
       <div className="h-screen w-screen flex flex-col font-inter overflow-hidden">
@@ -20,9 +19,9 @@ function App() {
           <Nav />
           <Container>
             <div className="flex gap-6">
-              <CardBalance balance={balance} progress={progress}></CardBalance>
-              <CardMonth variant={"income"} value={1820.5} />
-              <CardMonth variant={"expense"} value={1130.2} />
+              <CardBalance balance={balance} progress={0}></CardBalance>
+              <CardMonth variant={"income"} value={0} />
+              <CardMonth variant={"expense"} value={0} />
             </div>
             <RecentTransactionCard transactions={transactions} />
           </Container>
