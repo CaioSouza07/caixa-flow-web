@@ -7,15 +7,16 @@ import { useState } from "react";
 import Button from "./components/Button";
 import CardMonth from "./components/CardMonth";
 import RecentTransactionCard from "./components/RecentTransactionsCard";
+import useTransaction from "./hooks/useTransaction";
 
 function App() {
-  const [balance, setBalance] = useState(0);
+  const { transactions, balance, addTransaction } = useTransaction();
   const [progress, setProsgress] = useState(12);
   return (
     <>
-      <div className="h-screen w-screen flex flex-col font-inter">
+      <div className="h-screen w-screen flex flex-col font-inter overflow-hidden">
         <Header />
-        <div className="flex bg-black flex-1">
+        <div className="flex bg-black flex-1 min-h-0">
           <Nav />
           <Container>
             <div className="flex gap-6">
@@ -23,7 +24,7 @@ function App() {
               <CardMonth variant={"income"} value={1820.5} />
               <CardMonth variant={"expense"} value={1130.2} />
             </div>
-            <RecentTransactionCard />
+            <RecentTransactionCard transactions={transactions} />
           </Container>
         </div>
       </div>

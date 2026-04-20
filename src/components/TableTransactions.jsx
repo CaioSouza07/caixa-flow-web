@@ -1,27 +1,27 @@
 import TransactionLineTable from "./TransactionLineTable";
 
-function TableTransactions() {
+function TableTransactions({ transactions }) {
   return (
-    <table className="flex flex-col  gap-10">
-      <thead className="text-[#64748B]/80 tracking-widest">
-        <tr className="flex justify-start items-center">
-          <th className="text-left font-medium w-3/7">TÍTULO</th>
-          <th className="text-left font-medium w-1/7">DATA</th>
-          <th className="text-left font-medium w-1/7">VALOR</th>
-          <th className="text-left font-medium w-2/7">ANEXO</th>
-        </tr>
-      </thead>
-      <tbody>
-        <TransactionLineTable
-          transaction={{
-            title: "Recebimento - Salário SoftExpert",
-            date: "20/12/2020",
-            value: 1400,
-            attachment: "Recibo de Teste.pdf",
-          }}
-        />
-      </tbody>
-    </table>
+    <div className="h-full overflow-y-auto flex flex-col">
+      <div className="flex flex-col  gap-10">
+        <div className="text-[#64748B]/80 tracking-widest">
+          <div className="flex justify-start items-center">
+            <div className="text-left font-medium w-3/7">TÍTULO</div>
+            <div className="text-left font-medium w-1/7">DATA</div>
+            <div className="text-left font-medium w-1/7">VALOR</div>
+            <div className="text-left font-medium w-2/7">ANEXO</div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-8 overflow-hidden">
+          {transactions.map((transaction) => (
+            <TransactionLineTable
+              key={transaction.id}
+              transaction={transaction}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
