@@ -9,7 +9,7 @@ function Nav() {
           <LayoutDashboard size={26} strokeWidth={2.5} />
           Dashboard
         </NavButton>
-        <NavButton router={"/task"}>
+        <NavButton router={"/finances"}>
           <Wallet size={26} strokeWidth={2.5} />
           Finanças
         </NavButton>

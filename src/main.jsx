@@ -9,6 +9,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "/finances",
+    element: <p>teste</p>,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
